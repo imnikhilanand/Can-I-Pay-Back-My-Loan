@@ -34,6 +34,9 @@ HomeCredit_columns_description = pd.read_csv("HomeCredit_columns_description.csv
 agg_vals = application_train.groupby('TARGET').aggregate({'TARGET':'count'})
 plt.bar(agg_vals.index, agg_vals['TARGET'], width=0.1)
 
+# missing values in each of the columns
+sns.heatmap(application_train.isnull(), cbar=False)
+
 
 
 
